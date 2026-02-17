@@ -18,6 +18,7 @@
 .filter > input {
   flex-grow: 1;
   border: unset;
+  width: inherit;
 }
 
 .filter > input:focus {
