@@ -8,15 +8,13 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="card-container">
-    <template v-if="experience_items.length > 0">
-      <ExperienceContainer
-        v-for="experience_item in experience_items"
-        v-if="experience_items.length > 0"
-        data-test="experience-item"
-        :experience="experience_item"
-      />
-    </template>
+  <TransitionGroup tag="div" class="card-container" name="list">
+    <ExperienceContainer
+      v-for="experience_item in experience_items"
+      v-if="experience_items.length > 0"
+      data-test="experience-item"
+      :experience="experience_item"
+    />
     <div v-else data-test="placeholder">No items</div>
-  </div>
+  </TransitionGroup>
 </template>
