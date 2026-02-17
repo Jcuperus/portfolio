@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ExperienceContainer from "@/components/ExperienceContainer.vue";
+import ExperienceContainer from "./ExperienceContainer.vue";
 import type { ExperienceItem } from "@/models/experience_item";
 
 const props = defineProps<{

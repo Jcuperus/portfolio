@@ -19,9 +19,10 @@ function onChanged(_payload: Event) {
       placeholder="Filter projecten..."
       name="filter"
       id="filter"
+      data-test="query-input"
       v-model="query"
       @change="onChanged"
     />
-    <button @click="onChanged">Filter</button>
+    <button @click="onChanged" data-test="filter-button">Filter</button>
   </div>
 </template>

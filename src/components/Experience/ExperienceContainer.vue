@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ExperienceItem } from "@/models/experience_item";
-import ImageCenter from "./ImageCenter.vue";
+import ImageCenter from "@/components/ImageCenter.vue";
 
 const props = defineProps<{ experience: ExperienceItem }>();
 </script>
