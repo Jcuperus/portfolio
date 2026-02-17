@@ -1,0 +1,84 @@
+@import "./fonts.css";
+@import "./card.css";
+
+:root {
+  --primary-bg: white;
+  --primary-color: black;
+  --secondary-color: gray;
+
+  --primary-bg: #a4c2bd;
+  --primary-color: #205748;
+  --secondary-bg: #f5abb6;
+  --secondary-color: #882e1a;
+
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+  margin: 0;
+}
+
+main {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 0.9em;
+}
+
+input {
+  font-family: "Lato", sans-serif;
+}
+
+.primary {
+  color: var(--primary-color);
+  background-color: var(--primary-bg);
+}
+
+.primary-inverted {
+  color: var(--primary-bg);
+  background-color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+  background-color: var(--secondary-bg);
+}
+
+.secondary-inverted {
+  color: var(--secondary-bg);
+  background-color: var(--secondary-color);
+}
+
+.label {
+  padding: 1em;
+  margin: 0 0.25em;
+  border-radius: 1em;
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+.filter > input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid var(--primary-color);
+  border-radius: 1em;
+  box-shadow: 0px 5px 7px var(--primary-color);
+  box-sizing: border-box;
+  background-color: white;
+}

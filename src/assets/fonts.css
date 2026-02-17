@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Merriweather";
+  src: url("/src/assets/fonts/Merriweather_96pt-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/src/assets/fonts/Lato-Regular.ttf");
+}

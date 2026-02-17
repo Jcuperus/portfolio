@@ -9,12 +9,12 @@ describe("ExperienceContainer", () => {
       {
         title: "test item",
         body: "test body",
-        technologies: ["angular", "react"],
+        technologies: ["Angular", "React"],
       },
       {
         title: "test item 2",
         body: "test body",
-        technologies: ["react"],
+        technologies: ["React"],
       },
     ];
 
@@ -25,5 +25,17 @@ describe("ExperienceContainer", () => {
     const items = wrapper.findAll('[data-test="experience-item"]');
 
     expect(items.length).toBe(experience_items.length);
+  });
+
+  it("renders placeholder if no items supplied", () => {
+    const wrapper = mount(ExperienceList, {
+      props: {
+        experience_items: [],
+      },
+    });
+
+    const placeholder = wrapper.find('[data-test="placeholder"]');
+
+    expect(placeholder).not.toBeNull();
   });
 });

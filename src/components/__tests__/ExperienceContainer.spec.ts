@@ -8,7 +8,7 @@ describe("ExperienceContainer", () => {
     const experience_item: ExperienceItem = {
       title: "test item",
       body: "test body",
-      technologies: ["angular", "react"],
+      technologies: ["Angular", "React"],
     };
 
     const wrapper = mount(ExperienceContainer, {
@@ -23,7 +23,40 @@ describe("ExperienceContainer", () => {
     expect(body.text()).toBe(experience_item.body);
 
     for (const tech of experience_item.technologies) {
-      expect(technologies.text().toLowerCase()).toContain(tech);
+      expect(technologies.text().toLowerCase()).toContain(tech.toLowerCase());
     }
+  });
+
+  it("renders image if present in ExperienceItem", () => {
+    const experience_item: ExperienceItem = {
+      title: "test item",
+      body: "test body",
+      technologies: ["Angular", "React"],
+      thumbnail_image: "thumbnail_img.png",
+    };
+
+    const wrapper = mount(ExperienceContainer, {
+      props: { experience: experience_item },
+    });
+
+    const image = wrapper.get('[data-test="image"]');
+
+    expect(image.html()).toContain(experience_item.thumbnail_image);
+  });
+
+  it("renders no image if not present in ExperienceItem", () => {
+    const experience_item: ExperienceItem = {
+      title: "test item",
+      body: "test body",
+      technologies: ["Angular", "React"],
+    };
+
+    const wrapper = mount(ExperienceContainer, {
+      props: { experience: experience_item },
+    });
+
+    const image = wrapper.get('[data-test="image"]');
+
+    expect(image.html()).not.toContain(experience_item.thumbnail_image);
   });
 });
