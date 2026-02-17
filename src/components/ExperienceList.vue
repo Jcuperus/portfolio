@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <TransitionGroup tag="div" class="card-container" name="list">
+  <TransitionGroup tag="div" class="card-container" name="card">
     <ExperienceContainer
       v-for="experience_item in experience_items"
       v-if="experience_items.length > 0"

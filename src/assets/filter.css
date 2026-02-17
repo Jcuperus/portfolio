@@ -1,0 +1,25 @@
+.filter {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  padding: 0.2em;
+  padding-left: 1em;
+  border: 1px solid var(--primary-color);
+  border-radius: 1em;
+  box-shadow: 0px 5px 7px var(--primary-color);
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+
+.filter:has(> input:focus) {
+  box-shadow: 0px 5px 1px var(--primary-color);
+}
+
+.filter > input {
+  flex-grow: 1;
+  border: unset;
+}
+
+.filter > input:focus {
+  outline: none;
+}

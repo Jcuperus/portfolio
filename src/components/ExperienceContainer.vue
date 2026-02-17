@@ -14,7 +14,7 @@ const props = defineProps<{ experience: ExperienceItem }>();
     <div class="body">
       <div data-test="technologies">
         <span
-          class="label secondary-inverted"
+          class="label primary-inverted"
           v-for="technology in experience.technologies"
           >{{ technology }}</span
         >
