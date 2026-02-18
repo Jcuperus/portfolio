@@ -1,30 +1,35 @@
 <script setup lang="ts">
 const { src } = defineProps<{
-    src?: string,
+  src?: string;
 }>();
 </script>
 
 <template>
-    <div class="img-container">
-        <img v-if="src != null" :src="src" alt="thumbnail-image">
-        <img v-else src="/src/assets/images/thumbnail-placeholder.svg" alt="thumbnail-image">
-    </div>
+  <div class="img-container">
+    <img v-if="src != null" :src="src" alt="thumbnail-image" />
+    <img
+      v-else
+      src="/src/assets/images/thumbnail-placeholder.svg"
+      alt="thumbnail-image"
+    />
+  </div>
 </template>
 
 <style scoped>
 .img-container {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    position: relative;
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 
-.img-container>img {
-    height: auto;
-    width: 100%;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
+.img-container > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -46,7 +46,8 @@ input {
   font-family: "Lato", sans-serif;
 }
 
-button {
+button,
+a.btn {
   padding: 1em;
   border-radius: 1em;
   background-color: var(--primary-color);
@@ -54,12 +55,14 @@ button {
   border: 1px solid var(--primary-color);
 }
 
-button:hover {
+button:hover,
+a.btn:hover {
   cursor: pointer;
   text-decoration-line: underline;
 }
 
-button:active {
+button:active,
+a.btn:active {
   text-decoration-line: underline;
   color: var(--primary-color);
   background-color: var(--primary-bg);
@@ -85,12 +88,17 @@ button:active {
   background-color: var(--secondary-color);
 }
 
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: flex-start;
+}
+
 .label {
   padding: 1em;
-  margin: 0 0.25em;
   border-radius: 1em;
   font-size: 0.8em;
-  display: inline-block;
 }
 
 .hero {

@@ -12,7 +12,7 @@ const props = defineProps<{ experience: ExperienceItem }>();
       <h1 data-test="title">{{ experience.title }}</h1>
     </div>
     <div class="body">
-      <div data-test="technologies">
+      <div class="label-container" data-test="technologies">
         <span
           class="label primary-inverted"
           v-for="technology in experience.technologies"
