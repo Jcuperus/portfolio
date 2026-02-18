@@ -15,6 +15,6 @@ const props = defineProps<{
       data-test="experience-item"
       :experience="experience_item"
     />
-    <div v-else data-test="placeholder">No items</div>
+    <div v-else data-test="placeholder">Geen projecten gevonden</div>
   </TransitionGroup>
 </template>

@@ -33,19 +33,20 @@ export const experience_items: ExperienceItem[] = [
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
     thumbnail_image: "/src/assets/images/antea-group-logo.png",
   },
-  {
-    title: "Move Your Mind",
-    company: "Hanzehogeschool",
-    body: "Samenwerking met studenten van de Windesheim hogeschool. Systeem waarmee therapeuten gegevens in kunnen zien van hun patienten en deze kunnen helpen met het vinden van een gezondere levensstijl. Hierbij was mijn projectgroep verantwoordelijk voor het ontwikkelen van een API die de data van de fitbits van de patienten moest verwerken. Deze API is ontwikkeld in C# met het .NET framework.",
-    technologies: ["C#", ".NET Core"],
-    thumbnail_image: "/src/assets/images/400x600.svg",
-  },
+  // {
+  //   title: "Move Your Mind",
+  //   company: "Hanzehogeschool",
+  //   body: "Samenwerking met studenten van de Windesheim hogeschool. Systeem waarmee therapeuten gegevens in kunnen zien van hun patienten en deze kunnen helpen met het vinden van een gezondere levensstijl. Hierbij was mijn projectgroep verantwoordelijk voor het ontwikkelen van een API die de data van de fitbits van de patienten moest verwerken. Deze API is ontwikkeld in C# met het .NET framework.",
+  //   technologies: ["C#", ".NET Core"],
+  //   thumbnail_image: "/src/assets/images/400x600.svg",
+  // },
   {
     title: "Home Task Manager",
     company: "Hanzehogeschool",
     body: "Tool voor het beheren dagelijkse taken die er in een houshouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of de kat al eten heeft gekregen. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
     technologies: ["Vue", "JavaScript", "Spring Boot", "Android", "Java"],
-    thumbnail_image: "/src/assets/images/400x600.svg",
+    thumbnail_image: "/src/assets/images/home-task-manager-screens.png",
+    source: "https://github.com/Jcuperus/home-task-manager-frontend",
   },
   {
     title: "Disposable Discounter",
@@ -93,12 +94,14 @@ export const experience_items: ExperienceItem[] = [
     company: "CodeGorilla",
     body: "",
     technologies: ["PHP", "Laravel", "Angular", "Vue", "JavaScript"],
+    thumbnail_image: "/src/assets/images/codegorilla-logo.png",
   },
   {
     title: "Fudura Energie Monitoring",
     company: "AndCode",
     body: "Energiemonitoringtool voor vastgoedbeheerders, woningcorporaties en adviesbureaus.",
     technologies: ["PHP", "Laravel", "Angular", "JavaScript"],
+    thumbnail_image: "/src/assets/images/fudura-page.png",
   },
 
   // {
@@ -119,8 +122,18 @@ export const experience_items: ExperienceItem[] = [
     title: "Game Jam Projecten",
     body: "",
     technologies: ["Unity", "Godot", "C#"],
+    link: "https://zyzamo.itch.io/",
+    thumbnail_image: "/src/assets/images/stay-b-positive-screenshot.png",
   },
 ];
+
+/**
+ * Queries an experience item based on title, body, technologies and company fields
+ *
+ * @param item ExperienceItem to be queried
+ * @param query query string
+ * @returns boolean indicating whether a match is found
+ */
 export function queryExperienceItem(
   item: ExperienceItem,
   query: string,
@@ -130,6 +143,7 @@ export function queryExperienceItem(
   return (
     item.title.toLowerCase().includes(queryLower) ||
     item.body.toLowerCase().includes(queryLower) ||
+    (item.company && item.company.toLowerCase().includes(queryLower)) ||
     item.technologies.some((technology) =>
       technology.toLowerCase().includes(queryLower),
     )

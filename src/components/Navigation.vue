@@ -3,9 +3,7 @@
 <template>
   <section>
     <nav>
-      <a href="#projects">Projecten</a>
-      <a href="#projects">Projecten</a>
-      <a href="#projects">Projecten</a>
+      <a href="#about">Over mij</a>
       <a href="#projects">Projecten</a>
     </nav>
   </section>
