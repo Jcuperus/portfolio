@@ -19,17 +19,13 @@ const { src } = defineProps<{
 .img-container {
   aspect-ratio: 3 / 2;
   width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
 
 .img-container > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
   height: 100%;
 }
 </style>

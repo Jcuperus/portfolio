@@ -119,3 +119,12 @@ a.btn:active {
   font-size: max(3em, 12vw);
   background-color: var(--primary-color);
 }
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-item > *:first-child {
+  margin-right: 1em;
+}
