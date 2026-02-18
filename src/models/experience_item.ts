@@ -1,3 +1,15 @@
+import antea_img from "@/assets/images/antea-group-logo.png";
+import home_task_img from "@/assets/images/home-task-manager-screens.png";
+import didi_img from "@/assets/images/disposable-discounter-page.png";
+import peterprint_img from "@/assets/images/peterprint-page.png";
+import dwc_img from "@/assets/images/dwcprint-page.png";
+import fudura_img from "@/assets/images/fudura-page.png";
+import codegorilla_img from "@/assets/images/codegorilla-logo.png";
+import arb_img from "@/assets/images/close-up-screenshot.png";
+import all_inn_img from "@/assets/images/all-inn-verspreidingen-page.png";
+import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
+import horecagoedkoop_img from "@/assets/images/horecagoedkoop-page.png";
+
 export type Technology =
   | "JavaScript"
   | "React"
@@ -31,7 +43,7 @@ export const experience_items: ExperienceItem[] = [
     company: "Antea Group",
     body: "Digital Twin prototype ontwikkeld als afstudeerproject voor Antea Group. Voor deze opdracht heb ik met verschillende gemeentes interviews gehouden om mogelijke oplossingsrightingen vast te leggen. Vervolgens heb ik een prototype ontwikkeld waarmee o.a. gemeentes meer participatie bij hun projecten kunnen creeren door beslissingen aan de hand van data uit te leggen aan omwonenden.",
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
-    thumbnail_image: "/src/assets/images/antea-group-logo.png",
+    thumbnail_image: antea_img,
   },
   // {
   //   title: "Move Your Mind",
@@ -45,7 +57,7 @@ export const experience_items: ExperienceItem[] = [
     company: "Hanzehogeschool",
     body: "Tool voor het beheren dagelijkse taken die er in een houshouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of de kat al eten heeft gekregen. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
     technologies: ["Vue", "JavaScript", "Spring Boot", "Android", "Java"],
-    thumbnail_image: "/src/assets/images/home-task-manager-screens.png",
+    thumbnail_image: home_task_img,
     source: "https://github.com/Jcuperus/home-task-manager-frontend",
   },
   {
@@ -54,7 +66,7 @@ export const experience_items: ExperienceItem[] = [
     link: "https://www.disposablediscounter.com/",
     body: "Gewerkt aan de webshop voor Disposable Discounter. Onder andere gewerkt aan de productpagina volgens het nieuwe ontwerp.",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: "/src/assets/images/disposable-discounter-page.png",
+    thumbnail_image: didi_img,
   },
   {
     title: "PeterPrint",
@@ -62,7 +74,7 @@ export const experience_items: ExperienceItem[] = [
     company: "Mountain IT",
     body: "",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: "/src/assets/images/peterprint-page.png",
+    thumbnail_image: peterprint_img,
   },
   {
     title: "DWCPrint",
@@ -70,7 +82,7 @@ export const experience_items: ExperienceItem[] = [
     company: "AndCode",
     body: "",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: "/src/assets/images/dwcprint-page.png",
+    thumbnail_image: dwc_img,
   },
   {
     title: "Horeca Goedkoop",
@@ -78,7 +90,7 @@ export const experience_items: ExperienceItem[] = [
     company: "Mountain IT",
     body: "",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: "/src/assets/images/horecagoedkoop-page.png",
+    thumbnail_image: horecagoedkoop_img,
   },
   {
     title: "All-Inn Verspreidingen",
@@ -86,7 +98,7 @@ export const experience_items: ExperienceItem[] = [
     company: "AndCode",
     body: "",
     technologies: ["PHP", "Laravel", "JavaScript"],
-    thumbnail_image: "/src/assets/images/all-inn-verspreidingen-page.png",
+    thumbnail_image: all_inn_img,
   },
   {
     title: "CodeGorilla coaching",
@@ -94,14 +106,14 @@ export const experience_items: ExperienceItem[] = [
     company: "CodeGorilla",
     body: "",
     technologies: ["PHP", "Laravel", "Angular", "Vue", "JavaScript"],
-    thumbnail_image: "/src/assets/images/codegorilla-logo.png",
+    thumbnail_image: codegorilla_img,
   },
   {
     title: "Fudura Energie Monitoring",
     company: "AndCode",
     body: "Energiemonitoringtool voor vastgoedbeheerders, woningcorporaties en adviesbureaus.",
     technologies: ["PHP", "Laravel", "Angular", "JavaScript"],
-    thumbnail_image: "/src/assets/images/fudura-page.png",
+    thumbnail_image: fudura_img,
   },
 
   // {
@@ -115,15 +127,15 @@ export const experience_items: ExperienceItem[] = [
     company: "NHL Hogeschool",
     body: "Samenwerking tussen de NHL en Critical Bit. De opdracht was on verschillende prototypes te ontwikkelen om concepten te vinden voor bordspellen die gebruik maken van AR (augmented reality). Deze heb ik ontwikkeld met de Unity game engine in combinatie met de AR library Vuforia. Een voorbeeld van deze prototypes was Close Up, een spel waarbij je zo snel mogelijk een karakter moet vinden in een 3D omgeving. Hierbij kan je het tegen mensen op je lokale netwerk opnemen om de meeste karakters te vinden.",
     technologies: ["Unity", "C#"],
-    thumbnail_image: "/src/assets/images/close-up-screenshot.png",
     source: "https://github.com/Jcuperus/ARB-Close_Up",
+    thumbnail_image: arb_img,
   },
   {
     title: "Game Jam Projecten",
     body: "",
     technologies: ["Unity", "Godot", "C#"],
     link: "https://zyzamo.itch.io/",
-    thumbnail_image: "/src/assets/images/stay-b-positive-screenshot.png",
+    thumbnail_image: itch_game_img,
   },
 ];
 
