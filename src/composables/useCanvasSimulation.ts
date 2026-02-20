@@ -3,41 +3,6 @@ import { useMouse } from "./useMouse";
 import type { Vector } from "@/models/vector";
 import { distance } from "@/utils/math";
 
-class Points {
-  private data: number[][] = [];
-  size: Vector;
-
-  constructor(size: Vector) {
-    this.size = size;
-
-    for (let y = 0; y < size.y; y++) {
-      this.data[y] = Array(size.x).fill(1);
-    }
-  }
-
-  public get(x: number, y: number): number {
-    if (this.data[y] && this.data[y][x]) {
-      return this.data[y][x];
-    }
-
-    return 1;
-  }
-
-  public set(value: number, x: number, y: number) {
-    if (this.data[y]) {
-      this.data[y][x] = value;
-    }
-  }
-
-  public forEach(callback: (value: number, x: number, y: number) => void) {
-    for (let y = 0; y < this.size.y; y++) {
-      for (let x = 0; x < this.size.x; x++) {
-        callback(this.get(x, y), x, y);
-      }
-    }
-  }
-}
-
 export function useCanvasSimulation(
   canvasRef: ShallowRef<HTMLCanvasElement | null>,
 ) {
@@ -66,7 +31,6 @@ export function useCanvasSimulation(
       x: canvas.width / pointsSize.x,
       y: canvas.height / pointsSize.y,
     };
-    const points = new Points(pointsSize);
 
     context.fillStyle = fgColor;
 
@@ -86,17 +50,19 @@ export function useCanvasSimulation(
       };
       context.clearRect(0, 0, rect.width, rect.height);
 
-      points.forEach((value, x, y) => {
-        const pos: Vector = { x, y };
-        pos.x += 0.5;
-        pos.y += 0.5;
-        const canvas_pos = pointToCanvas(pos);
-        const cursor_dist = distance(cursor, canvas_pos);
-        const size = Math.max(1, (200 - cursor_dist) / 20);
-        canvas_pos.x -= size / 2;
-        canvas_pos.y -= size / 2;
-        context.fillRect(canvas_pos.x, canvas_pos.y, size, size);
-      });
+      for (let y = 0; y < pointsSize.y; y++) {
+        for (let x = 0; x < pointsSize.x; x++) {
+          const pos: Vector = { x, y };
+          pos.x += 0.5;
+          pos.y += 0.5;
+          const canvas_pos = pointToCanvas(pos);
+          const cursor_dist = distance(cursor, canvas_pos);
+          const size = Math.max(1, (200 - cursor_dist) / 20);
+          canvas_pos.x -= size / 2;
+          canvas_pos.y -= size / 2;
+          context.fillRect(canvas_pos.x, canvas_pos.y, size, size);
+        }
+      }
 
       requestAnimationFrame(update);
     }
