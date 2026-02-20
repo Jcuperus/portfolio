@@ -17,7 +17,7 @@ useCanvasSimulation(canvasRef);
 .hero {
   position: relative;
   height: auto;
-  min-height: 40vw;
+  min-height: 60vh;
   background-color: var(--primary-color);
   color: var(--primary-bg);
 }

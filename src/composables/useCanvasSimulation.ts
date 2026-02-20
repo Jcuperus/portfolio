@@ -32,6 +32,9 @@ export function useCanvasSimulation(
       y: canvas.height / pointsSize.y,
     };
 
+    let lastTime = 0;
+    let uptime = 0;
+
     context.fillStyle = fgColor;
 
     function pointToCanvas(pointPos: Vector): Vector {
@@ -41,7 +44,16 @@ export function useCanvasSimulation(
       };
     }
 
-    function update() {
+    function update(currentTime: number = 0) {
+      // Calculate elapsed time between last animation frame to we can move stuff without the speed depending on the framerate
+      if (lastTime === 0) {
+        lastTime = currentTime;
+      }
+      const deltaTime = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+      uptime += deltaTime;
+      // console.log(deltaTime);
+
       const rect = canvas.getBoundingClientRect();
       // Get cursor position in canvas coordinates
       const cursor: Vector = {
@@ -56,8 +68,22 @@ export function useCanvasSimulation(
           pos.x += 0.5;
           pos.y += 0.5;
           const canvas_pos = pointToCanvas(pos);
+          // const size = Math.max(1, (200 - cursor_dist) / 20);
+          let size = 0.1;
+          size *= Math.sin(0.1 * (x + uptime));
+          // size *= Math.sin(0.05 * (x + uptime * 1.2));
+
+          // size = Math.max(size, Math.sin(0.2 * (x - uptime * 5)) * 0.5 + 0.5);
+          // size *= Math.sin(0.05 * (y + uptime * 20)) * 0.5 + 0.5;
+          // size *= Math.max(Math.sin(0.1 * (y + uptime * 0.2)) * 0.5 + 0.5);
+
+          // let size = (Math.sin((x + uptime) * 0.6) + 1) / 2;
+          const cutoff_dist = 250;
           const cursor_dist = distance(cursor, canvas_pos);
-          const size = Math.max(1, (200 - cursor_dist) / 20);
+          let cursor_influence =
+            Math.max(0, cutoff_dist - cursor_dist) / cutoff_dist;
+          size = cursor_influence - size;
+          size *= 10;
           canvas_pos.x -= size / 2;
           canvas_pos.y -= size / 2;
           context.fillRect(canvas_pos.x, canvas_pos.y, size, size);
