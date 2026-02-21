@@ -46,6 +46,18 @@ export const experience_data: ExperienceItem[] = [
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
     thumbnail_image: antea_img,
   },
+  {
+    title: "Portfolio",
+    body: "Deze website",
+    technologies: ["Vue", "JavaScript"],
+    source: "https://github.com/Jcuperus/portfolio",
+  },
+  {
+    title: "Java HTTP Server",
+    body: "Een simpele server die gebasseerd is op de HTTP spefificatie",
+    technologies: ["Java"],
+    source: "https://github.com/Jcuperus/HttpServerJava",
+  },
   // {
   //   title: "Move Your Mind",
   //   company: "Hanzehogeschool",
