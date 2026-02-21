@@ -30,7 +30,7 @@ useCanvasSimulation(canvasRef);
   margin: 0;
   padding-bottom: 0.3em;
   font-size: max(3em, 12vw);
-  text-shadow: 0.05em 0.05em 0.02em var(--primary-color);
+  text-shadow: 0.02em 0.02em 0.02em var(--primary-color);
   /* background-color: var(--primary-color); */
 }
 

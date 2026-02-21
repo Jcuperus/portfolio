@@ -1,8 +1,8 @@
-import { onMounted, type ShallowRef } from "vue";
-import { useMouse } from "./useMouse";
 import type { Vector } from "@/models/vector";
-import { distance } from "@/utils/math";
+import { distance, easeInOutCubic, squareDistance } from "@/utils/math";
+import { onMounted, type ShallowRef } from "vue";
 import { useColorPalette } from "./useColorPalette";
+import { useMouse } from "./useMouse";
 
 export function useCanvasSimulation(
   canvasRef: ShallowRef<HTMLCanvasElement | null>,
@@ -34,16 +34,72 @@ export function useCanvasSimulation(
       };
     }
 
-    function update(currentTime: number = 0) {
-      // Calculate elapsed time between last animation frame to we can move stuff without the speed depending on the framerate
-      // if (lastTime === 0) {
-      //   lastTime = currentTime;
-      // }
-      // const deltaTime = (currentTime - lastTime) / 1000;
-      // lastTime = currentTime;
-      // uptime += deltaTime;
-      // console.log(deltaTime);
+    function doubleCircleWavePattern(
+      position: Vector,
+      currentTime: number,
+      wave_frequency = 0.005,
+      speed = 0.1,
+    ) {
+      let value = 1;
+      value *= circleWavePattern(
+        position,
+        {
+          x: canvas.width,
+          y: canvas.height,
+        },
+        currentTime,
+        wave_frequency,
+        speed,
+      );
+      value *= circleWavePattern(
+        position,
+        {
+          x: 0,
+          y: 0,
+        },
+        currentTime,
+        wave_frequency,
+        speed,
+      );
 
+      return value;
+    }
+
+    function circleWavePattern(
+      position: Vector,
+      center: Vector,
+      currentTime: number,
+      wave_frequency = 0.005,
+      speed = 0.1,
+    ) {
+      const distToBottomRight = distance(center, position);
+      return Math.sin(
+        wave_frequency * (distToBottomRight + currentTime * speed),
+      );
+    }
+
+    function cursorInfluencePattern(
+      position: Vector,
+      cursor_pos: Vector,
+      cutoff = 1500,
+    ) {
+      const cutoff_dist = cutoff * pixelsPerPoint.x;
+      const cursor_dist = squareDistance(cursor_pos, position);
+
+      return Math.max(0, cutoff_dist - cursor_dist) / cutoff_dist;
+    }
+
+    function fadeInPattern(currentTime: number, durationMs = 3000) {
+      let value = currentTime / durationMs;
+
+      return Math.min(1, easeInOutCubic(value));
+    }
+
+    function diminishBottom(position: Vector, strength = 0.9) {
+      return 1.0 - (position.y / canvas.height) * strength;
+    }
+
+    function update(currentTime: number = 0) {
       const rect = canvas.getBoundingClientRect();
       // Get cursor position in canvas coordinates
       const cursor: Vector = {
@@ -51,6 +107,7 @@ export function useCanvasSimulation(
         y: ((mouseY.value - rect.top) / rect.height) * canvas.height,
       };
       context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = primaryBg.value;
 
       for (let y = 0; y < pointCount.y; y++) {
         for (let x = 0; x < pointCount.x; x++) {
@@ -61,38 +118,30 @@ export function useCanvasSimulation(
 
           //Value determining the size of a point in a 0-1 range
           let pointValue = 1;
-          const distToCenter = distance(
-            {
-              x: canvas.width / 2,
-              y: canvas.height / 2,
-            },
+          let oscillator = Math.sin(currentTime * 0.0002) * 0.5 + 0.5;
+          pointValue *= circleWavePattern(
             canvas_pos,
+            { x: canvas.width * oscillator, y: 0 },
+            currentTime,
           );
-          pointValue *= Math.sin(0.005 * (distToCenter + currentTime * 0.1));
-          // pointValue *= Math.sin(0.1 * (x + uptime));
-          // pointValue *= Math.sin(0.05 * (x + uptime * 1.2));
+          pointValue *= circleWavePattern(
+            canvas_pos,
+            { x: canvas.width * (1.0 - oscillator), y: canvas.height },
+            currentTime * 0.8,
+          );
 
-          // pointValue = Math.max(
-          //   pointValue,
-          //   Math.sin(0.2 * (x - uptime * 5)) * 0.5 + 0.5,
-          // );
-          // pointValue *= Math.sin(0.05 * (y + uptime * 20)) * 0.5 + 0.5;
-          // pointValue *= Math.max(
-          //   Math.sin(0.1 * (y + uptime * 0.2)) * 0.5 + 0.5,
-          // );
-
-          const cutoff_dist = 10 * pixelsPerPoint.x;
-          const cursor_dist = distance(cursor, canvas_pos);
-          let cursor_influence =
-            Math.max(0, cutoff_dist - cursor_dist) / cutoff_dist;
+          const cursor_influence = cursorInfluencePattern(canvas_pos, cursor);
           pointValue = pointValue * (1 - cursor_influence);
+
+          pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
+          pointValue *= diminishBottom(canvas_pos);
+
           const size: Vector = {
             x: pixelsPerPoint.x * pointValue,
             y: pixelsPerPoint.y * pointValue,
           };
           canvas_pos.x -= size.x / 2;
           canvas_pos.y -= size.y / 2;
-          context.fillStyle = primaryBg.value;
           context.fillRect(canvas_pos.x, canvas_pos.y, size.x, size.y);
         }
       }
@@ -107,9 +156,6 @@ export function useCanvasSimulation(
     if (!maybeContext) return;
     // Hacky solution so typescript doesn't think context is null from now on
     const context = maybeContext as CanvasRenderingContext2D;
-
-    let lastTime = 0;
-    let uptime = 0;
 
     resize();
 
