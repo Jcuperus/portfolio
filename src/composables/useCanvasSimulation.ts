@@ -36,12 +36,12 @@ export function useCanvasSimulation(
 
     function update(currentTime: number = 0) {
       // Calculate elapsed time between last animation frame to we can move stuff without the speed depending on the framerate
-      if (lastTime === 0) {
-        lastTime = currentTime;
-      }
-      const deltaTime = (currentTime - lastTime) / 1000;
-      lastTime = currentTime;
-      uptime += deltaTime;
+      // if (lastTime === 0) {
+      //   lastTime = currentTime;
+      // }
+      // const deltaTime = (currentTime - lastTime) / 1000;
+      // lastTime = currentTime;
+      // uptime += deltaTime;
       // console.log(deltaTime);
 
       const rect = canvas.getBoundingClientRect();
@@ -68,7 +68,7 @@ export function useCanvasSimulation(
             },
             canvas_pos,
           );
-          pointValue *= Math.sin(0.005 * (distToCenter + uptime * 20));
+          pointValue *= Math.sin(0.005 * (distToCenter + currentTime * 0.1));
           // pointValue *= Math.sin(0.1 * (x + uptime));
           // pointValue *= Math.sin(0.05 * (x + uptime * 1.2));
 
@@ -81,8 +81,7 @@ export function useCanvasSimulation(
           //   Math.sin(0.1 * (y + uptime * 0.2)) * 0.5 + 0.5,
           // );
 
-          //TODO: scale distance by viewport size
-          const cutoff_dist = 250;
+          const cutoff_dist = 10 * pixelsPerPoint.x;
           const cursor_dist = distance(cursor, canvas_pos);
           let cursor_influence =
             Math.max(0, cutoff_dist - cursor_dist) / cutoff_dist;
@@ -108,7 +107,6 @@ export function useCanvasSimulation(
     if (!maybeContext) return;
     // Hacky solution so typescript doesn't think context is null from now on
     const context = maybeContext as CanvasRenderingContext2D;
-    console.log("first?", context.fillStyle);
 
     let lastTime = 0;
     let uptime = 0;
