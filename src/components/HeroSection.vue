@@ -8,7 +8,7 @@ useCanvasSimulation(canvasRef);
 
 <template>
   <section class="hero">
-    <canvas width="1200" height="600" ref="hero-canvas"></canvas>
+    <canvas ref="hero-canvas"></canvas>
     <h1>jaep cuperus</h1>
   </section>
 </template>
@@ -17,7 +17,6 @@ useCanvasSimulation(canvasRef);
 .hero {
   position: relative;
   height: auto;
-  min-height: 60vh;
   background-color: var(--primary-color);
   color: var(--primary-bg);
 }
@@ -31,14 +30,13 @@ useCanvasSimulation(canvasRef);
   margin: 0;
   padding-bottom: 0.3em;
   font-size: max(3em, 12vw);
-  text-shadow: 3rem 3rem 1rem var(--primary-color);
+  text-shadow: 0.05em 0.05em 0.02em var(--primary-color);
   /* background-color: var(--primary-color); */
 }
 
 .hero > canvas {
   display: block;
   width: 100%;
-  height: 100%;
   image-rendering: pixelated;
 }
 </style>
