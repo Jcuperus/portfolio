@@ -9,6 +9,7 @@ import home_task_img from "@/assets/images/home-task-manager-screens.png";
 import horecagoedkoop_img from "@/assets/images/horecagoedkoop-page.png";
 import peterprint_img from "@/assets/images/peterprint-page.png";
 import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
+import java_logo_img from "@/assets/images/java-logo.png";
 import { ref } from "vue";
 
 export type Technology =
@@ -42,7 +43,7 @@ export const experience_data: ExperienceItem[] = [
   {
     title: "Digital Twin",
     company: "Antea Group",
-    body: "Digital Twin prototype ontwikkeld als afstudeerproject voor Antea Group. Voor deze opdracht heb ik met verschillende gemeentes interviews gehouden om mogelijke oplossingsrightingen vast te leggen. Vervolgens heb ik een prototype ontwikkeld waarmee o.a. gemeentes meer participatie bij hun projecten kunnen creeren door beslissingen aan de hand van data uit te leggen aan omwonenden.",
+    body: "Digital Twin prototype ontwikkeld als afstudeerproject voor Antea Group. Voor deze opdracht heb ik met verschillende gemeentes interviews gehouden om mogelijke oplossingsrichtingen vast te stellen. Vervolgens heb ik een prototype ontwikkeld waarmee projectmanagers meer participatie bij hun projecten kunnen genereren. Een van de manieren waarmee dit gedaan werd was door omgevingsdata toegankelijker te maken voor omwonenden zodat gemaakte keuzes hieraan uitgelegd kunnen worden.",
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
     thumbnail_image: antea_img,
   },
@@ -54,9 +55,10 @@ export const experience_data: ExperienceItem[] = [
   },
   {
     title: "Java HTTP Server",
-    body: "Een simpele server die gebasseerd is op de HTTP spefificatie",
+    body: "Een simpele server die gebaseerd is op de HTTP specificatie",
     technologies: ["Java"],
     source: "https://github.com/Jcuperus/HttpServerJava",
+    thumbnail_image: java_logo_img,
   },
   // {
   //   title: "Move Your Mind",
@@ -68,7 +70,7 @@ export const experience_data: ExperienceItem[] = [
   {
     title: "Home Task Manager",
     company: "Hanzehogeschool",
-    body: "Tool voor het beheren dagelijkse taken die er in een houshouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of de kat al eten heeft gekregen. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
+    body: "Tool voor het beheren van dagelijkse taken die er in een huishouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of een ander familielid de kat al eten heeft gegeven. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
     technologies: ["Vue", "JavaScript", "Spring Boot", "Android", "Java"],
     thumbnail_image: home_task_img,
     source: "https://github.com/Jcuperus/home-task-manager-frontend",
@@ -77,7 +79,7 @@ export const experience_data: ExperienceItem[] = [
     title: "Disposable Discounter",
     company: "Mountain IT",
     link: "https://www.disposablediscounter.com/",
-    body: "Gewerkt aan de webshop voor Disposable Discounter. Onder andere gewerkt aan de productpagina volgens het nieuwe ontwerp.",
+    body: "Magentowebshop voor Disposable Discounter in samenwerking met E-Tales. Zelf heb ik bijvoorbeeld bijgedragen aan verschillende onderdelen op de productpagina en het kiezen van de correcte verpakkingsdozen voor een bestelling.",
     technologies: ["PHP", "Magento", "JavaScript"],
     thumbnail_image: didi_img,
   },
@@ -85,7 +87,7 @@ export const experience_data: ExperienceItem[] = [
     title: "PeterPrint",
     link: "https://www.peterprint.nl/",
     company: "Mountain IT",
-    body: "",
+    body: "Webshop voor drukkerij PeterPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
     thumbnail_image: peterprint_img,
   },
@@ -93,7 +95,7 @@ export const experience_data: ExperienceItem[] = [
     title: "DWCPrint",
     link: "https://www.dwcprint.nl/",
     company: "AndCode",
-    body: "",
+    body: "Webshop voor drukkerij DWCPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
     thumbnail_image: dwc_img,
   },
@@ -101,7 +103,7 @@ export const experience_data: ExperienceItem[] = [
     title: "Horeca Goedkoop",
     link: "https://www.horecagoedkoop.nl/",
     company: "Mountain IT",
-    body: "",
+    body: "Webshop voor drankengroothandel Horeca Goedkoop",
     technologies: ["PHP", "Magento", "JavaScript"],
     thumbnail_image: horecagoedkoop_img,
   },
@@ -109,7 +111,7 @@ export const experience_data: ExperienceItem[] = [
     title: "All-Inn Verspreidingen",
     link: "https://verspreidingen.nl/",
     company: "AndCode",
-    body: "",
+    body: "Meegewerkt aan het overzetten van de originele PHP webapplicatie naar een Laravel applicatie",
     technologies: ["PHP", "Laravel", "JavaScript"],
     thumbnail_image: all_inn_img,
   },
@@ -117,7 +119,7 @@ export const experience_data: ExperienceItem[] = [
     title: "CodeGorilla coaching",
     link: "https://www.codegorilla.nl/",
     company: "CodeGorilla",
-    body: "",
+    body: "Meegewerkt aan een IT bootcamp voor mensen die langdurig in een werkloosheidssituatie zitten. Hierbij heb ik mensen begeleid en les gegeven in web development (o.a. PHP, Laravel en JavaScript).",
     technologies: ["PHP", "Laravel", "Angular", "Vue", "JavaScript"],
     thumbnail_image: codegorilla_img,
   },
@@ -144,7 +146,7 @@ export const experience_data: ExperienceItem[] = [
   },
   {
     title: "Game Jam Projecten",
-    body: "",
+    body: "Projecten waar ik tijdens verschillende game jams aan gewerkt heb. Ik was hierbij meestal verantwoordelijk voor design en programmeren.",
     technologies: ["Unity", "Godot", "C#"],
     link: "https://zyzamo.itch.io/",
     thumbnail_image: itch_game_img,
