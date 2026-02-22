@@ -11,9 +11,11 @@ const themes: Theme = {
   papyrus: "papyrus",
 };
 
-let currentTheme = "";
+const defaultTheme = "pine";
+const storageKey = "theme";
 const primaryCol = ref("#FFFFFF");
 const primaryBg = ref("#000000");
+const currentTheme = ref(defaultTheme);
 
 export function useColorPalette() {
   function changeTheme(theme: string) {
@@ -22,23 +24,30 @@ export function useColorPalette() {
     const className = themes[theme];
     const rootElement = document.documentElement;
 
-    if (rootElement.classList.contains(currentTheme)) {
-      rootElement.classList.remove(currentTheme);
+    if (rootElement.classList.contains(currentTheme.value)) {
+      rootElement.classList.remove(currentTheme.value);
     }
 
     rootElement.classList.add(className);
-    currentTheme = className;
+    currentTheme.value = className;
 
     primaryCol.value =
       getComputedStyle(rootElement).getPropertyValue("--primary-color");
 
     primaryBg.value =
       getComputedStyle(rootElement).getPropertyValue("--primary-bg");
+
+    localStorage.setItem(storageKey, theme);
   }
 
   onMounted(() => {
-    changeTheme("pine");
+    const savedTheme = localStorage.getItem(storageKey);
+    if (savedTheme) {
+      changeTheme(savedTheme);
+    } else {
+      changeTheme(defaultTheme);
+    }
   });
 
-  return { primaryCol, primaryBg, themes, changeTheme };
+  return { primaryCol, primaryBg, themes, currentTheme, changeTheme };
 }

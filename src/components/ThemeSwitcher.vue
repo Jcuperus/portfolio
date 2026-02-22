@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useColorPalette } from "@/composables/useColorPalette";
 
-const { themes, changeTheme } = useColorPalette();
+const { themes, currentTheme, changeTheme } = useColorPalette();
 </script>
 
 <template>
@@ -10,6 +10,7 @@ const { themes, changeTheme } = useColorPalette();
     <button
       v-for="theme in themes"
       class="primary-inverted"
+      :class="{ selected: theme == currentTheme }"
       @click="changeTheme(theme)"
     >
       {{ theme }}
@@ -26,5 +27,11 @@ h3 {
 .themes > button {
   width: 100%;
   margin-bottom: 0.5em;
+  text-transform: capitalize;
+}
+
+button.selected {
+  font-weight: bold;
+  text-decoration-line: underline;
 }
 </style>
