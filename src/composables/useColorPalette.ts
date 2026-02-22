@@ -1,20 +1,43 @@
 import { onMounted, ref } from "vue";
 
+type Theme = {
+  [key: string]: string;
+};
+
+const themes: Theme = {
+  green: "green",
+  red: "red",
+  light: "light",
+};
+
+let currentTheme = "";
+const primaryCol = ref("#FFFFFF");
+const primaryBg = ref("#000000");
+
 export function useColorPalette() {
-  const primaryCol = ref("#FFFFFF");
-  const primaryBg = ref("#000000");
+  function changeTheme(theme: string) {
+    if (!(theme in themes) || !themes[theme]) return;
 
-  onMounted(() => {
-    const bodyElement = document.querySelector("body");
+    const className = themes[theme];
+    const rootElement = document.documentElement;
 
-    if (!bodyElement) return;
+    if (rootElement.classList.contains(currentTheme)) {
+      rootElement.classList.remove(currentTheme);
+    }
+
+    rootElement.classList.add(className);
+    currentTheme = className;
 
     primaryCol.value =
-      getComputedStyle(bodyElement).getPropertyValue("--primary-color");
+      getComputedStyle(rootElement).getPropertyValue("--primary-color");
 
     primaryBg.value =
-      getComputedStyle(bodyElement).getPropertyValue("--primary-bg");
+      getComputedStyle(rootElement).getPropertyValue("--primary-bg");
+  }
+
+  onMounted(() => {
+    changeTheme("green");
   });
 
-  return { primaryCol, primaryBg };
+  return { primaryCol, primaryBg, themes, changeTheme };
 }

@@ -1,26 +1,20 @@
 @import "./fonts.css";
 @import "./card.css";
 @import "./filter.css";
+@import "./themes.css";
 
 :root {
-  --primary-bg: white;
-  --primary-color: black;
-  --secondary-color: gray;
-
-  --primary-bg: #a4c2bd;
-  --primary-color: #205748;
-  --secondary-bg: #f5abb6;
-  --secondary-color: #882e1a;
-
   font-family: "Lato", sans-serif;
 }
 
 @keyframes slide-in {
   0% {
     opacity: 0;
+    transform: translateY(-1rem);
   }
   100% {
     opacity: 1;
+    transform: 0;
   }
 }
 

@@ -10,7 +10,7 @@ useCanvasSimulation(canvasRef);
   <section class="hero">
     <canvas ref="hero-canvas"></canvas>
     <div class="text-box">
-      <h2>full-stack developer - maar nog niet uitgeleerd</h2>
+      <h2>full-stack developer</h2>
       <h1>jaep cuperus</h1>
     </div>
   </section>
@@ -42,15 +42,17 @@ useCanvasSimulation(canvasRef);
   font-size: max(3em, 12vw);
   padding-bottom: 0.3em;
   animation-name: slide-in;
-  animation-duration: 3s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 
 .hero h2 {
   font-size: max(0.8em, 2vw);
   animation-name: slide-in;
-  animation-delay: 3s;
-  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-duration: 2s;
   animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
 
 .hero canvas {

@@ -1,0 +1,23 @@
+:root {
+  --green-main: #205748;
+  --green-bg: #a4c2bd;
+
+  --red-main: #882e1a;
+  --red-bg: #f5abb6;
+
+  --light-main: #1b1b1b;
+  --light-bg: #ffffff;
+
+  --primary-color: var(--green-main);
+  --primary-bg: var(--green-bg);
+}
+
+:root.red {
+  --primary-color: var(--red-main);
+  --primary-bg: var(--red-bg);
+}
+
+:root.light {
+  --primary-color: var(--light-main);
+  --primary-bg: var(--light-bg);
+}
