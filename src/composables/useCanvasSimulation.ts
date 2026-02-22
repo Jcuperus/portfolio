@@ -1,11 +1,5 @@
 import type { Vector } from "@/models/vector";
-import {
-  distance,
-  easeInCubic,
-  easeInOutCubic,
-  easeInSine,
-  squareDistance,
-} from "@/utils/math";
+import { distance, easeInOutCubic, squareDistance } from "@/utils/math";
 import { onMounted, type ShallowRef } from "vue";
 import { useColorPalette } from "./useColorPalette";
 import { useMouse } from "./useMouse";
@@ -15,7 +9,7 @@ export function useCanvasSimulation(
 ) {
   const { x: mouseX, y: mouseY } = useMouse();
   const { primaryBg } = useColorPalette();
-  const canvasRatio = 2 / 5;
+  const canvasRatio = 2 / 4;
   const pointCount: Vector = {
     x: 50,
     y: Math.floor(50 * canvasRatio),
@@ -101,7 +95,7 @@ export function useCanvasSimulation(
       return Math.min(1, easeInOutCubic(value));
     }
 
-    function diminishBottom(position: Vector, strength = 0.8) {
+    function diminishBottom(position: Vector, strength = 0.9) {
       return easeInOutCubic(1.0 - (position.y / canvas.height) * strength);
     }
 
@@ -136,7 +130,7 @@ export function useCanvasSimulation(
             currentTime * 0.8,
           );
 
-          pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
+          // pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
           pointValue *= diminishBottom(canvas_pos);
 
           const cursor_influence = cursorInfluencePattern(canvas_pos, cursor);

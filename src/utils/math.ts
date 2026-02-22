@@ -26,14 +26,6 @@ export function lerp(a: number, b: number, t: number): number {
   return (1 - t) * a + t * b;
 }
 
-export function easeInCubic(x: number): number {
-  return x * x * x;
-}
-
-export function easeInSine(x: number): number {
-  return 1 - Math.cos((x * Math.PI) / 2);
-}
-
 export function easeInOutCubic(x: number): number {
   return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 }

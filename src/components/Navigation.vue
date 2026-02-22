@@ -16,7 +16,6 @@ nav {
   border-bottom: 1px solid var(--primary-color);
   box-shadow: 0px 5px 7px var(--primary-color);
   transition: box-shadow 0.2s;
-  overflow-x: scroll;
 }
 
 nav:hover {
