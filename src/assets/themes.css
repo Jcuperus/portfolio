@@ -1,6 +1,6 @@
 :root {
-  --green-main: #205748;
-  --green-bg: #a4c2bd;
+  --pine-main: #205748;
+  --pine-bg: #a4c2bd;
 
   --red-main: #882e1a;
   --red-bg: #f5abb6;
@@ -8,8 +8,11 @@
   --light-main: #1b1b1b;
   --light-bg: #ffffff;
 
-  --primary-color: var(--green-main);
-  --primary-bg: var(--green-bg);
+  --papyrus-main: #3d311e;
+  --papyrus-bg: #f3a65e;
+
+  --primary-color: var(--pine-main);
+  --primary-bg: var(--pine-bg);
 }
 
 :root.red {
@@ -20,4 +23,9 @@
 :root.light {
   --primary-color: var(--light-main);
   --primary-bg: var(--light-bg);
+}
+
+:root.papyrus {
+  --primary-color: var(--papyrus-main);
+  --primary-bg: var(--papyrus-bg);
 }

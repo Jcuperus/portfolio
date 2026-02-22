@@ -71,6 +71,11 @@ a.btn:active {
   background-color: var(--primary-bg);
 }
 
+button.primary-inverted {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+}
+
 .primary {
   color: var(--primary-color);
   background-color: var(--primary-bg);
@@ -79,16 +84,6 @@ a.btn:active {
 .primary-inverted {
   color: var(--primary-bg);
   background-color: var(--primary-color);
-}
-
-.secondary {
-  color: var(--secondary-color);
-  background-color: var(--secondary-bg);
-}
-
-.secondary-inverted {
-  color: var(--secondary-bg);
-  background-color: var(--secondary-color);
 }
 
 .label-container {

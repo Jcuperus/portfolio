@@ -10,7 +10,6 @@ import ThemeSwitcher from "@/components/ThemeSwitcher.vue";
   <HeroSection />
   <Navigation />
   <main>
-    <ThemeSwitcher />
     <AboutSection />
     <ProjectsSection />
   </main>

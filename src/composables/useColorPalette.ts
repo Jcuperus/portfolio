@@ -5,9 +5,10 @@ type Theme = {
 };
 
 const themes: Theme = {
-  green: "green",
+  pine: "pine",
   red: "red",
   light: "light",
+  papyrus: "papyrus",
 };
 
 let currentTheme = "";
@@ -36,7 +37,7 @@ export function useColorPalette() {
   }
 
   onMounted(() => {
-    changeTheme("green");
+    changeTheme("pine");
   });
 
   return { primaryCol, primaryBg, themes, changeTheme };
