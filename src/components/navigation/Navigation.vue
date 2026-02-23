@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import ThemeSwitcher from "@/components/ThemeSwitcher.vue";
+import { useOnClickOutside } from "@/composables/useOnClickOutside";
 import { Palette } from "@iconoir/vue";
 import { ref } from "vue";
 import NavigationItem from "./NavigationItem.vue";
 
 const showThemeMenu = ref(false);
+
+useOnClickOutside("theme-switcher", () => {
+  showThemeMenu.value = false;
+});
 
 function openThemes() {
   showThemeMenu.value = !showThemeMenu.value;
@@ -16,7 +21,7 @@ function openThemes() {
     <nav>
       <NavigationItem anchor-selector="#skills">Vaardigheden</NavigationItem>
       <NavigationItem anchor-selector="#projects">Projecten</NavigationItem>
-      <div style="position: relative">
+      <div style="position: relative" id="theme-switcher">
         <div
           class="nav-btn"
           :class="{ active: showThemeMenu }"
