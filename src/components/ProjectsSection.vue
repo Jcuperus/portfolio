@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ExperienceList from "@/components/Experience/ExperienceList.vue";
+import ExperienceList from "@/components/experience/ExperienceList.vue";
 
 import ArticleTitle from "@/components/ArticleTitle.vue";
-import FilterBox from "@/components/Experience/FilterBox.vue";
+import FilterBox from "@/components/experience/FilterBox.vue";
 import { useExperienceItems } from "@/composables/useExperienceItems.ts";
 
 const { experience_items, filter } = useExperienceItems();

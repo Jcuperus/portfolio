@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import ThemeSwitcher from "@/components/ThemeSwitcher.vue";
 import { Palette } from "@iconoir/vue";
-import ThemeSwitcher from "./ThemeSwitcher.vue";
 import { ref } from "vue";
+import NavigationItem from "./NavigationItem.vue";
 
 const showThemeMenu = ref(false);
 
@@ -13,9 +14,8 @@ function openThemes() {
 <template>
   <section>
     <nav>
-      <a href="#about">Over mij</a>
-      <a href="#skills">Vaardigheden</a>
-      <a href="#projects">Projecten</a>
+      <NavigationItem anchor-selector="#skills">Vaardigheden</NavigationItem>
+      <NavigationItem anchor-selector="#projects">Projecten</NavigationItem>
       <div style="position: relative">
         <div
           class="nav-btn"
@@ -49,21 +49,23 @@ nav {
   min-width: 14em;
 }
 
-nav > a,
+nav a,
 .nav-btn {
+  align-content: center;
+  text-decoration-line: underline;
   padding: 1em;
   color: var(--primary-color);
   background-color: var(--primary-bg);
   cursor: pointer;
 }
 
-nav > a:hover,
+nav a:hover,
 .nav-btn:hover {
   color: var(--primary-bg);
   background-color: var(--primary-color);
 }
 
-nav > a:active {
+nav a:active {
   color: var(--primary-color);
   background-color: var(--primary-bg);
 }
