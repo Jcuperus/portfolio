@@ -25,7 +25,7 @@ import ArticleTitle from "./ArticleTitle.vue";
         omgezet naar instructies voor de CPU.
       </p>
       <p>
-        Ben je geïnteresseerd in mij? Stuur een
+        Ben je ook geïnteresseerd in mij? Stuur een
         <a href="mailto:jaepcuperus@hotmail.com">mailtje</a> of neem eerst een
         kijkje op mijn <a href="https://github.com/Jcuperus">GitHub</a>.
       </p>
