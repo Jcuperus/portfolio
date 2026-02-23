@@ -9,6 +9,9 @@ const themes: Theme = {
   red: "red",
   light: "light",
   papyrus: "papyrus",
+  belasting: "belasting",
+  vintage: "vintage",
+  brat: "brat",
 };
 
 const defaultTheme = "pine";

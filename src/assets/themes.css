@@ -11,6 +11,15 @@
   --papyrus-main: #3d311e;
   --papyrus-bg: #f3a65e;
 
+  --blue-bg: #cad6ec;
+  --blue-main: #154273;
+
+  --vintage-bg: #ecc36f;
+  --vintage-main: #090209;
+
+  --brat-bg: #8bcf00;
+  --brat-main: #000000;
+
   --primary-color: var(--pine-main);
   --primary-bg: var(--pine-bg);
 }
@@ -28,4 +37,19 @@
 :root.papyrus {
   --primary-color: var(--papyrus-main);
   --primary-bg: var(--papyrus-bg);
+}
+
+:root.belasting {
+  --primary-color: var(--blue-main);
+  --primary-bg: var(--blue-bg);
+}
+
+:root.vintage {
+  --primary-color: var(--vintage-main);
+  --primary-bg: var(--vintage-bg);
+}
+
+:root.brat {
+  --primary-color: var(--brat-main);
+  --primary-bg: var(--brat-bg);
 }
