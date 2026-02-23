@@ -8,6 +8,7 @@ const themes: Theme = {
   pine: "pine",
   red: "red",
   light: "light",
+  dark: "dark",
   papyrus: "papyrus",
   belasting: "belasting",
   vintage: "vintage",

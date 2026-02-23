@@ -28,6 +28,7 @@ h3 {
   width: 100%;
   margin-bottom: 0.5em;
   text-transform: capitalize;
+  border: unset;
 }
 
 button.selected {

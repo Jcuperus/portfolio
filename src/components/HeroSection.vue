@@ -34,12 +34,15 @@ useCanvasSimulation(canvasRef);
 
 .hero h1,
 .hero h2 {
-  text-shadow: 0.02em 0.02em 0.02em var(--primary-color);
+  text-shadow: 0.03em 0.03em 0 var(--primary-color);
   margin: 0;
+  display: block;
+  background-color: unset;
 }
 
 .hero h1 {
   font-size: max(3em, 12vw);
+  padding-top: 0;
   padding-bottom: 0.3em;
   animation-name: slide-in;
   animation-duration: 2s;

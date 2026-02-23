@@ -14,6 +14,7 @@ function openThemes() {
   <section>
     <nav>
       <a href="#about">Over mij</a>
+      <a href="#skills">Vaardigheden</a>
       <a href="#projects">Projecten</a>
       <div style="position: relative">
         <div
