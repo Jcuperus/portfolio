@@ -8,8 +8,8 @@
   --light-main: #1b1b1b;
   --light-bg: #ffffff;
 
-  --dark-main: #949494;
-  --dark-bg: #000000;
+  --cobalt-main: #3082ac;
+  --cobalt-bg: #1c1c2b;
 
   --papyrus-main: #3d311e;
   --papyrus-bg: #f3a65e;
@@ -37,9 +37,9 @@
   --primary-bg: var(--light-bg);
 }
 
-:root.dark {
-  --primary-color: var(--dark-bg);
-  --primary-bg: var(--dark-main);
+:root.cobalt {
+  --primary-color: var(--cobalt-main);
+  --primary-bg: var(--cobalt-bg);
 }
 
 :root.papyrus {
