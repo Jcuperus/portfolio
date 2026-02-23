@@ -10,6 +10,7 @@ import horecagoedkoop_img from "@/assets/images/horecagoedkoop-page.png";
 import peterprint_img from "@/assets/images/peterprint-page.png";
 import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
 import java_logo_img from "@/assets/images/java-logo.png";
+import portfolio_img from "@/assets/images/portfolio-screenshot.png";
 import { ref } from "vue";
 
 export type Technology =
@@ -52,6 +53,7 @@ export const experience_data: ExperienceItem[] = [
     body: "Deze website",
     technologies: ["Vue", "JavaScript"],
     source: "https://github.com/Jcuperus/portfolio",
+    thumbnail_image: portfolio_img,
   },
   {
     title: "Java HTTP Server",
