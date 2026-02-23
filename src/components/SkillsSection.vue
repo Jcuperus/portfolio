@@ -19,8 +19,12 @@ import ArticleTitle from "./ArticleTitle.vue";
         <p>Magento 1 & 2</p>
       </div>
       <div class="skill">
+        <p>Andere programmeertalen</p>
+        <p>Python, Java, C#</p>
+      </div>
+      <div class="skill">
         <p>Tools</p>
-        <p>GIT, Docker, Linux</p>
+        <p>Git, Docker, Linux</p>
       </div>
       <div class="skill">
         <p>Talen</p>

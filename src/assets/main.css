@@ -6,6 +6,7 @@
 :root {
   font-family: "Lato", sans-serif;
   --default-shadow: 0px 5px 0px var(--primary-color);
+  --max-width: 1280px;
 }
 
 @keyframes slide-in {
@@ -26,7 +27,7 @@ body {
 }
 
 main {
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
@@ -52,6 +53,10 @@ h1 {
 
 input {
   font-family: "Lato", sans-serif;
+}
+
+a {
+  color: var(--primary-color);
 }
 
 button,
