@@ -24,6 +24,11 @@ import ArticleTitle from "./ArticleTitle.vue";
         leren, wat me veel inzicht geeft in geheugenbeheer en hoe code wordt
         omgezet naar instructies voor de CPU.
       </p>
+      <p>
+        Ben je geïnteresseerd in mij? Stuur een
+        <a href="mailto:jaepcuperus@hotmail.com">mailtje</a> of neem eerst een
+        kijkje op mijn <a href="https://github.com/Jcuperus">GitHub</a>.
+      </p>
     </div>
   </section>
 </template>
