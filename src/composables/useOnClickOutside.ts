@@ -11,7 +11,7 @@ export function useOnClickOutside(targetId: string, callback: () => void) {
     return false;
   }
 
-  function onClickOutside(event: PointerEvent) {
+  function onClickOutside(event: PointerEvent | TouchEvent) {
     const clickTarget = event.target;
     if (!clickTarget || !(clickTarget instanceof HTMLElement)) return;
 
@@ -21,4 +21,5 @@ export function useOnClickOutside(targetId: string, callback: () => void) {
   }
 
   addEventListener("click", onClickOutside);
+  addEventListener("touchend", onClickOutside);
 }

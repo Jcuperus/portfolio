@@ -17,8 +17,8 @@ const themes: Theme = {
 
 const defaultTheme = "pine";
 const storageKey = "theme";
-const primaryCol = ref("#FFFFFF");
-const primaryBg = ref("#000000");
+const primaryCol = ref(" #205748");
+const primaryBg = ref("#a4c2bd");
 const currentTheme = ref(defaultTheme);
 
 export function useColorPalette() {
