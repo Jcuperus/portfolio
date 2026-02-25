@@ -26,11 +26,14 @@ export function useCanvasSimulation(
 
     function resize() {
       canvas.width = innerWidth;
-      canvas.height = innerWidth * canvasRatio;
+      canvas.height = innerHeight;
+
+      const size = canvas.width / pointCount.x;
+      pointCount.y = canvas.height / size;
 
       pixelsPerPoint = {
-        x: canvas.width / pointCount.x,
-        y: canvas.height / pointCount.y,
+        x: size,
+        y: size,
       };
     }
 
@@ -130,8 +133,8 @@ export function useCanvasSimulation(
             currentTime * 0.8,
           );
 
-          // pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
-          pointValue *= diminishBottom(canvas_pos);
+          pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
+          // pointValue *= diminishBottom(canvas_pos);
 
           const cursor_influence = cursorInfluencePattern(canvas_pos, cursor);
           pointValue = pointValue * (1 - cursor_influence);

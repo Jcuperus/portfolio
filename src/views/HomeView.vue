@@ -11,8 +11,8 @@ import SkillsSection from "@/components/SkillsSection.vue";
   <HeroSection />
   <Navigation />
   <main>
-    <AboutSection />
-    <SkillsSection />
+    <AboutSection class="smaller" />
+    <SkillsSection class="smaller right" />
     <ProjectsSection />
   </main>
   <Footer />

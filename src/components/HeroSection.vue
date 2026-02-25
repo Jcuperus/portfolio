@@ -7,8 +7,8 @@ useCanvasSimulation(canvasRef);
 </script>
 
 <template>
+  <canvas ref="hero-canvas"></canvas>
   <section class="hero">
-    <canvas ref="hero-canvas"></canvas>
     <div class="text-box">
       <h2>full-stack developer</h2>
       <h1>jaep cuperus</h1>
@@ -20,8 +20,9 @@ useCanvasSimulation(canvasRef);
 .hero {
   position: relative;
   height: auto;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   color: var(--primary-bg);
+  height: 80vh;
 }
 
 .hero .text-box {
@@ -58,9 +59,13 @@ useCanvasSimulation(canvasRef);
   animation-timing-function: ease-in-out;
 }
 
-.hero canvas {
+canvas {
   display: block;
+  position: fixed;
   width: 100%;
+  height: 100%;
   image-rendering: pixelated;
+  z-index: -1;
+  background-color: var(--primary-color);
 }
 </style>
