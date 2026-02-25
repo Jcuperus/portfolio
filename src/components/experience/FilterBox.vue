@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const emit = defineEmits<{
-  (e: "change", new_query?: string): void;
+  (e: "change", newQuery?: string): void;
 }>();
 
 const query = ref<string>();

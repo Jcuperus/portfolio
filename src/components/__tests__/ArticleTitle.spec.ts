@@ -4,14 +4,14 @@ import { mount } from "@vue/test-utils";
 
 describe("ArticleTitle", () => {
   it("displays title and id", () => {
-    const prop_data = { title: "test title", id: "test-id" };
+    const propData = { title: "test title", id: "test-id" };
     const wrapper = mount(ArticleTitle, {
-      props: prop_data,
+      props: propData,
     });
 
     const title = wrapper.get('[data-test="title"]');
 
-    expect(title.text()).toBe(prop_data.title);
-    expect(title.element.id).toBe(prop_data.id);
+    expect(title.text()).toBe(propData.title);
+    expect(title.element.id).toBe(propData.id);
   });
 });

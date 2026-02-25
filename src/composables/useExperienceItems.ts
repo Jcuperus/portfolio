@@ -36,7 +36,7 @@ export interface ExperienceItem {
   company?: string;
   link?: string;
   source?: string;
-  thumbnail_image?: string;
+  thumbnailImage?: string;
   technologies: Technology[];
 }
 
@@ -46,35 +46,35 @@ export const experience_data: ExperienceItem[] = [
     company: "Antea Group",
     body: "Digital Twin prototype ontwikkeld als afstudeerproject voor Antea Group. Voor deze opdracht heb ik met verschillende gemeentes interviews gehouden om mogelijke oplossingsrichtingen vast te stellen. Vervolgens heb ik een prototype ontwikkeld waarmee projectmanagers meer participatie bij hun projecten kunnen genereren. Een van de manieren waarmee dit gedaan werd was door omgevingsdata toegankelijker te maken voor omwonenden zodat gemaakte keuzes hieraan uitgelegd kunnen worden.",
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
-    thumbnail_image: antea_img,
+    thumbnailImage: antea_img,
   },
   {
     title: "Portfolio",
     body: "Deze website",
     technologies: ["Vue", "JavaScript"],
     source: "https://github.com/Jcuperus/portfolio",
-    thumbnail_image: portfolio_img,
+    thumbnailImage: portfolio_img,
   },
   {
     title: "Java HTTP Server",
     body: "Een simpele server die gebaseerd is op de HTTP specificatie",
     technologies: ["Java"],
     source: "https://github.com/Jcuperus/HttpServerJava",
-    thumbnail_image: java_logo_img,
+    thumbnailImage: java_logo_img,
   },
   // {
   //   title: "Move Your Mind",
   //   company: "Hanzehogeschool",
   //   body: "Samenwerking met studenten van de Windesheim hogeschool. Systeem waarmee therapeuten gegevens in kunnen zien van hun patienten en deze kunnen helpen met het vinden van een gezondere levensstijl. Hierbij was mijn projectgroep verantwoordelijk voor het ontwikkelen van een API die de data van de fitbits van de patienten moest verwerken. Deze API is ontwikkeld in C# met het .NET framework.",
   //   technologies: ["C#", ".NET Core"],
-  //   thumbnail_image: "/src/assets/images/400x600.svg",
+  //   thumbnailImage: "/src/assets/images/400x600.svg",
   // },
   {
     title: "Home Task Manager",
     company: "Hanzehogeschool",
     body: "Tool voor het beheren van dagelijkse taken die er in een huishouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of een ander familielid de kat al eten heeft gegeven. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
     technologies: ["Vue", "JavaScript", "Spring Boot", "Android", "Java"],
-    thumbnail_image: home_task_img,
+    thumbnailImage: home_task_img,
     source: "https://github.com/Jcuperus/home-task-manager-frontend",
   },
   {
@@ -83,7 +83,7 @@ export const experience_data: ExperienceItem[] = [
     link: "https://www.disposablediscounter.com/",
     body: "Magentowebshop voor Disposable Discounter in samenwerking met E-Tales. Zelf heb ik bijvoorbeeld bijgedragen aan verschillende onderdelen op de productpagina en het kiezen van de correcte verpakkingsdozen voor een bestelling.",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: didi_img,
+    thumbnailImage: didi_img,
   },
   {
     title: "PeterPrint",
@@ -91,7 +91,7 @@ export const experience_data: ExperienceItem[] = [
     company: "Mountain IT",
     body: "Webshop voor drukkerij PeterPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: peterprint_img,
+    thumbnailImage: peterprint_img,
   },
   {
     title: "DWCPrint",
@@ -99,7 +99,7 @@ export const experience_data: ExperienceItem[] = [
     company: "AndCode",
     body: "Webshop voor drukkerij DWCPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: dwc_img,
+    thumbnailImage: dwc_img,
   },
   {
     title: "Horeca Goedkoop",
@@ -107,7 +107,7 @@ export const experience_data: ExperienceItem[] = [
     company: "Mountain IT",
     body: "Webshop voor drankengroothandel Horeca Goedkoop",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnail_image: horecagoedkoop_img,
+    thumbnailImage: horecagoedkoop_img,
   },
   {
     title: "All-Inn Verspreidingen",
@@ -115,7 +115,7 @@ export const experience_data: ExperienceItem[] = [
     company: "AndCode",
     body: "Meegewerkt aan het overzetten van de originele PHP webapplicatie naar een Laravel applicatie",
     technologies: ["PHP", "Laravel", "JavaScript"],
-    thumbnail_image: all_inn_img,
+    thumbnailImage: all_inn_img,
   },
   {
     title: "CodeGorilla coaching",
@@ -123,14 +123,14 @@ export const experience_data: ExperienceItem[] = [
     company: "CodeGorilla",
     body: "Meegewerkt aan een IT bootcamp voor mensen die langdurig in een werkloosheidssituatie zitten. Hierbij heb ik mensen begeleid en les gegeven in web development (o.a. PHP, Laravel en JavaScript).",
     technologies: ["PHP", "Laravel", "Angular", "Vue", "JavaScript"],
-    thumbnail_image: codegorilla_img,
+    thumbnailImage: codegorilla_img,
   },
   {
     title: "Fudura Energie Monitoring",
     company: "AndCode",
     body: "Energiemonitoringtool voor vastgoedbeheerders, woningcorporaties en adviesbureaus.",
     technologies: ["PHP", "Laravel", "Angular", "JavaScript"],
-    thumbnail_image: fudura_img,
+    thumbnailImage: fudura_img,
   },
   // {
   //   title: "Amsterdam Hotelmonitor?",
@@ -144,14 +144,14 @@ export const experience_data: ExperienceItem[] = [
     body: "Samenwerking tussen de NHL en Critical Bit. De opdracht was on verschillende prototypes te ontwikkelen om concepten te vinden voor bordspellen die gebruik maken van AR (augmented reality). Deze heb ik ontwikkeld met de Unity game engine in combinatie met de AR library Vuforia. Een voorbeeld van deze prototypes was Close Up, een spel waarbij je zo snel mogelijk een karakter moet vinden in een 3D omgeving. Hierbij kan je het tegen mensen op je lokale netwerk opnemen om de meeste karakters te vinden.",
     technologies: ["Unity", "C#"],
     source: "https://github.com/Jcuperus/ARB-Close_Up",
-    thumbnail_image: arb_img,
+    thumbnailImage: arb_img,
   },
   {
     title: "Game Jam Projecten",
     body: "Projecten waar ik tijdens verschillende game jams aan gewerkt heb. Ik was hierbij meestal verantwoordelijk voor design en programmeren.",
     technologies: ["Unity", "Godot", "C#"],
     link: "https://zyzamo.itch.io/",
-    thumbnail_image: itch_game_img,
+    thumbnailImage: itch_game_img,
   },
 ];
 
@@ -176,17 +176,17 @@ function matchItem(item: ExperienceItem, query: string): boolean {
 }
 
 export function useExperienceItems() {
-  const experience_items = ref(experience_data);
+  const experienceItems = ref(experience_data);
 
   const filter = (query?: string) => {
     if (!query || query === "") {
-      experience_items.value = experience_data;
+      experienceItems.value = experience_data;
     } else {
-      experience_items.value = experience_data.filter((item) =>
+      experienceItems.value = experience_data.filter((item) =>
         matchItem(item, query),
       );
     }
   };
 
-  return { experience_items, filter };
+  return { experienceItems, filter };
 }

@@ -9,7 +9,7 @@ const props = defineProps<{ experience: ExperienceItem }>();
 <template>
   <div class="card">
     <div class="head primary-inverted">
-      <ImageCenter data-test="image" :src="props.experience.thumbnail_image" />
+      <ImageCenter data-test="image" :src="props.experience.thumbnailImage" />
       <h1 data-test="title">{{ experience.title }}</h1>
     </div>
     <div class="body">

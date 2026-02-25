@@ -5,7 +5,7 @@ import type { ExperienceItem } from "@/models/experience_item";
 
 describe("ExperienceContainer", () => {
   it("renders correct amount of items", () => {
-    const experience_items: ExperienceItem[] = [
+    const experienceItems: ExperienceItem[] = [
       {
         title: "test item",
         body: "test body",
@@ -19,18 +19,18 @@ describe("ExperienceContainer", () => {
     ];
 
     const wrapper = mount(ExperienceList, {
-      props: { experience_items: experience_items },
+      props: { experienceItems: experienceItems },
     });
 
     const items = wrapper.findAll('[data-test="experience-item"]');
 
-    expect(items.length).toBe(experience_items.length);
+    expect(items.length).toBe(experienceItems.length);
   });
 
   it("renders placeholder if no items supplied", () => {
     const wrapper = mount(ExperienceList, {
       props: {
-        experience_items: [],
+        experienceItems: [],
       },
     });
 

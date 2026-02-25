@@ -22,7 +22,9 @@ useCanvasSimulation(canvasRef);
   height: auto;
   /* background-color: var(--primary-color); */
   color: var(--primary-bg);
-  height: 80vh;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 5/2;
 }
 
 .hero .text-box {
@@ -30,15 +32,17 @@ useCanvasSimulation(canvasRef);
   bottom: 0;
   right: 0;
   text-align: right;
+  margin-left: 1em;
   margin-right: 1em;
 }
 
 .hero h1,
 .hero h2 {
-  text-shadow: 0.03em 0.03em 0 var(--primary-color);
-  margin: 0;
   display: block;
-  background-color: unset;
+  background-color: var(--primary-color);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .hero h1 {
@@ -57,6 +61,8 @@ useCanvasSimulation(canvasRef);
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
+  display: inline-block;
+  margin-left: auto;
 }
 
 canvas {

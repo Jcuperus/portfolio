@@ -43,7 +43,7 @@ nav {
   justify-content: center;
   /* border-bottom: 1px solid var(--primary-color); */
   transition: box-shadow 0.2s;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   gap: 1em;
 }
 

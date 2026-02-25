@@ -21,6 +21,6 @@ export interface ExperienceItem {
   company?: string;
   link?: string;
   source?: string;
-  thumbnail_image?: string;
+  thumbnailImage?: string;
   technologies: Technology[];
 }

@@ -40,7 +40,7 @@ export function useCanvasSimulation(
     function doubleCircleWavePattern(
       position: Vector,
       currentTime: number,
-      wave_frequency = 0.005,
+      waveFrequency = 0.005,
       speed = 0.1,
     ) {
       let value = 1;
@@ -51,7 +51,7 @@ export function useCanvasSimulation(
           y: canvas.height,
         },
         currentTime,
-        wave_frequency,
+        waveFrequency,
         speed,
       );
       value *= circleWavePattern(
@@ -61,7 +61,7 @@ export function useCanvasSimulation(
           y: 0,
         },
         currentTime,
-        wave_frequency,
+        waveFrequency,
         speed,
       );
 
@@ -72,24 +72,24 @@ export function useCanvasSimulation(
       position: Vector,
       center: Vector,
       currentTime: number,
-      wave_frequency = 0.005,
+      waveFrequency = 0.005,
       speed = 0.1,
     ) {
       const distToBottomRight = distance(center, position);
       return Math.sin(
-        wave_frequency * (distToBottomRight + currentTime * speed),
+        waveFrequency * (distToBottomRight + currentTime * speed),
       );
     }
 
     function cursorInfluencePattern(
       position: Vector,
-      cursor_pos: Vector,
+      cursorPos: Vector,
       cutoff = 1500,
     ) {
-      const cutoff_dist = cutoff * pixelsPerPoint.x;
-      const cursor_dist = squareDistance(cursor_pos, position);
+      const cutoffDist = cutoff * pixelsPerPoint.x;
+      const cursorDist = squareDistance(cursorPos, position);
 
-      return Math.max(0, cutoff_dist - cursor_dist) / cutoff_dist;
+      return Math.max(0, cutoffDist - cursorDist) / cutoffDist;
     }
 
     function fadeInPattern(currentTime: number, durationMs = 3000) {
@@ -117,35 +117,35 @@ export function useCanvasSimulation(
           const pos: Vector = { x, y };
           pos.x += 0.5;
           pos.y += 0.5;
-          const canvas_pos = pointToCanvas(pos, pixelsPerPoint);
+          const canvasPos = pointToCanvas(pos, pixelsPerPoint);
 
           //Value determining the size of a point in a 0-1 range
           let pointValue = 1;
           let oscillator = Math.sin(currentTime * 0.0002) * 0.5 + 0.5;
           pointValue *= circleWavePattern(
-            canvas_pos,
+            canvasPos,
             { x: canvas.width * oscillator, y: 0 },
             currentTime,
           );
           pointValue *= circleWavePattern(
-            canvas_pos,
+            canvasPos,
             { x: canvas.width * (1.0 - oscillator), y: canvas.height },
             currentTime * 0.8,
           );
 
-          pointValue *= fadeInPattern(currentTime, canvas_pos.y * 10 + 5000);
-          // pointValue *= diminishBottom(canvas_pos);
+          pointValue *= fadeInPattern(currentTime, canvasPos.y * 10 + 5000);
+          // pointValue *= diminishBottom(canvasPos);
 
-          const cursor_influence = cursorInfluencePattern(canvas_pos, cursor);
-          pointValue = pointValue * (1 - cursor_influence);
+          const cursorInfluence = cursorInfluencePattern(canvasPos, cursor);
+          pointValue = pointValue * (1 - cursorInfluence);
 
           const size: Vector = {
             x: pixelsPerPoint.x * pointValue,
             y: pixelsPerPoint.y * pointValue,
           };
-          canvas_pos.x -= size.x / 2;
-          canvas_pos.y -= size.y / 2;
-          context.fillRect(canvas_pos.x, canvas_pos.y, size.x, size.y);
+          canvasPos.x -= size.x / 2;
+          canvasPos.y -= size.y / 2;
+          context.fillRect(canvasPos.x, canvasPos.y, size.x, size.y);
         }
       }
 
