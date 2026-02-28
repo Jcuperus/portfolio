@@ -46,6 +46,15 @@ main section.right {
   margin-left: auto;
 }
 
+@keyframes reveal-title {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -53,7 +62,7 @@ h4,
 h5,
 h6 {
   font-family: "Merriweather", serif;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   color: var(--primary-bg);
   display: inline-block;
   padding: 0.25em 0;
@@ -62,6 +71,19 @@ h6 {
 h1 {
   font-size: 3em;
   line-height: 0.9em;
+  position: relative;
+  z-index: 1;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  animation: reveal-title 0.8s ease 0.2s forwards;
 }
 
 input {
