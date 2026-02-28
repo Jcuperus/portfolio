@@ -11,7 +11,7 @@ const { title, thumbnail_src } = defineProps<{
   <div class="card">
     <ImageCenter data-test="image" class="head" :src="thumbnail_src" />
     <div class="body">
-      <h1>{{ title }}</h1>
+      <h1 data-test="title">{{ title }}</h1>
       <slot></slot>
     </div>
   </div>
