@@ -11,7 +11,10 @@ const { projects, filter } = useProjects();
 <template>
   <section>
     <ArticleTitle title="projecten" id="projects" />
-    <FilterBox @change="filter" />
+    <FilterBox
+      placeholder="Filter op: titel, javascript, etc."
+      @change="filter"
+    />
     <ProjectList :projects="projects" />
   </section>
 </template>
