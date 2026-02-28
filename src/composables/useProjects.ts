@@ -1,40 +1,40 @@
-import all_inn_img from "@/assets/images/all-inn-verspreidingen-page.png";
-import antea_img from "@/assets/images/antea-group-logo.png";
-import arb_img from "@/assets/images/close-up-screenshot.png";
-import codegorilla_img from "@/assets/images/codegorilla-logo.png";
-import didi_img from "@/assets/images/disposable-discounter-page.png";
-import dwc_img from "@/assets/images/dwcprint-page.png";
-import fudura_img from "@/assets/images/fudura-page.png";
-import home_task_img from "@/assets/images/home-task-manager-screens.png";
-import horecagoedkoop_img from "@/assets/images/horecagoedkoop-page.png";
-import java_logo_img from "@/assets/images/java-logo.png";
-import peterprint_img from "@/assets/images/peterprint-page.png";
-import portfolio_img from "@/assets/images/portfolio-screenshot.png";
-import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
+import allInnImg from "@/assets/images/all-inn-verspreidingen-page.png";
+import anteaImg from "@/assets/images/antea-group-logo.png";
+import arbImg from "@/assets/images/close-up-screenshot.png";
+import codegorillaImg from "@/assets/images/codegorilla-logo.png";
+import didiImg from "@/assets/images/disposable-discounter-page.png";
+import dwcImg from "@/assets/images/dwcprint-page.png";
+import fuduraImg from "@/assets/images/fudura-page.png";
+import homeTaskImg from "@/assets/images/home-task-manager-screens.png";
+import horecagoedkoopImg from "@/assets/images/horecagoedkoop-page.png";
+import javaLogoImg from "@/assets/images/java-logo.png";
+import peterprintImg from "@/assets/images/peterprint-page.png";
+import portfolioImg from "@/assets/images/portfolio-screenshot.png";
+import itchGameImg from "@/assets/images/stay-b-positive-screenshot.png";
 import type { Project } from "@/models/project";
 import { ref } from "vue";
 
-export const project_data: Project[] = [
+export const projectData: Project[] = [
   {
     title: "Digital Twin",
     company: "Antea Group",
     body: "Digital Twin prototype ontwikkeld als afstudeerproject voor Antea Group. Voor deze opdracht heb ik met verschillende gemeentes interviews gehouden om mogelijke oplossingsrichtingen vast te stellen. Vervolgens heb ik een prototype ontwikkeld waarmee projectmanagers meer participatie bij hun projecten kunnen genereren. Een van de manieren waarmee dit gedaan werd was door omgevingsdata toegankelijker te maken voor omwonenden zodat gemaakte keuzes hieraan uitgelegd kunnen worden.",
     technologies: ["React", "Vue", "ArcGIS", "JavaScript"],
-    thumbnailImage: antea_img,
+    thumbnailImage: anteaImg,
   },
   {
     title: "Portfolio",
     body: "Deze website",
     technologies: ["Vue", "JavaScript"],
     source: "https://github.com/Jcuperus/portfolio",
-    thumbnailImage: portfolio_img,
+    thumbnailImage: portfolioImg,
   },
   {
     title: "Java HTTP Server",
     body: "Een simpele server die gebaseerd is op de HTTP specificatie",
     technologies: ["Java"],
     source: "https://github.com/Jcuperus/HttpServerJava",
-    thumbnailImage: java_logo_img,
+    thumbnailImage: javaLogoImg,
   },
   // {
   //   title: "Move Your Mind",
@@ -48,7 +48,7 @@ export const project_data: Project[] = [
     company: "Hanzehogeschool",
     body: "Tool voor het beheren van dagelijkse taken die er in een huishouden gedaan moeten worden. Zo kan je bijvoorbeeld zien of een ander familielid de kat al eten heeft gegeven. Deze tool bestond uit een Java (spring boot) backend met een Angular frontend en een Android applicatie.",
     technologies: ["Vue", "JavaScript", "Spring Boot", "Android", "Java"],
-    thumbnailImage: home_task_img,
+    thumbnailImage: homeTaskImg,
     source: "https://github.com/Jcuperus/home-task-manager-frontend",
   },
   {
@@ -57,7 +57,7 @@ export const project_data: Project[] = [
     link: "https://www.disposablediscounter.com/",
     body: "Magentowebshop voor Disposable Discounter in samenwerking met E-Tales. Zelf heb ik bijvoorbeeld bijgedragen aan verschillende onderdelen op de productpagina en het kiezen van de correcte verpakkingsdozen voor een bestelling.",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnailImage: didi_img,
+    thumbnailImage: didiImg,
   },
   {
     title: "PeterPrint",
@@ -65,7 +65,7 @@ export const project_data: Project[] = [
     company: "Mountain IT",
     body: "Webshop voor drukkerij PeterPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnailImage: peterprint_img,
+    thumbnailImage: peterprintImg,
   },
   {
     title: "DWCPrint",
@@ -73,7 +73,7 @@ export const project_data: Project[] = [
     company: "AndCode",
     body: "Webshop voor drukkerij DWCPrint",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnailImage: dwc_img,
+    thumbnailImage: dwcImg,
   },
   {
     title: "Horeca Goedkoop",
@@ -81,7 +81,7 @@ export const project_data: Project[] = [
     company: "Mountain IT",
     body: "Webshop voor drankengroothandel Horeca Goedkoop",
     technologies: ["PHP", "Magento", "JavaScript"],
-    thumbnailImage: horecagoedkoop_img,
+    thumbnailImage: horecagoedkoopImg,
   },
   {
     title: "All-Inn Verspreidingen",
@@ -89,7 +89,7 @@ export const project_data: Project[] = [
     company: "AndCode",
     body: "Meegewerkt aan het overzetten van de originele PHP webapplicatie naar een Laravel applicatie",
     technologies: ["PHP", "Laravel", "JavaScript"],
-    thumbnailImage: all_inn_img,
+    thumbnailImage: allInnImg,
   },
   {
     title: "CodeGorilla coaching",
@@ -97,14 +97,14 @@ export const project_data: Project[] = [
     company: "CodeGorilla",
     body: "Meegewerkt aan een IT bootcamp voor mensen die langdurig in een werkloosheidssituatie zitten. Hierbij heb ik mensen begeleid en les gegeven in web development (o.a. PHP, Laravel en JavaScript).",
     technologies: ["PHP", "Laravel", "Angular", "Vue", "JavaScript"],
-    thumbnailImage: codegorilla_img,
+    thumbnailImage: codegorillaImg,
   },
   {
     title: "Fudura Energie Monitoring",
     company: "AndCode",
     body: "Energiemonitoringtool voor vastgoedbeheerders, woningcorporaties en adviesbureaus.",
     technologies: ["PHP", "Laravel", "Angular", "JavaScript"],
-    thumbnailImage: fudura_img,
+    thumbnailImage: fuduraImg,
   },
   // {
   //   title: "Amsterdam Hotelmonitor?",
@@ -118,14 +118,14 @@ export const project_data: Project[] = [
     body: "Samenwerking tussen de NHL en Critical Bit. De opdracht was on verschillende prototypes te ontwikkelen om concepten te vinden voor bordspellen die gebruik maken van AR (augmented reality). Deze heb ik ontwikkeld met de Unity game engine in combinatie met de AR library Vuforia. Een voorbeeld van deze prototypes was Close Up, een spel waarbij je zo snel mogelijk een karakter moet vinden in een 3D omgeving. Hierbij kan je het tegen mensen op je lokale netwerk opnemen om de meeste karakters te vinden.",
     technologies: ["Unity", "C#"],
     source: "https://github.com/Jcuperus/ARB-Close_Up",
-    thumbnailImage: arb_img,
+    thumbnailImage: arbImg,
   },
   {
     title: "Game Jam Projecten",
     body: "Projecten waar ik tijdens verschillende game jams aan gewerkt heb. Ik was hierbij meestal verantwoordelijk voor design en programmeren.",
     technologies: ["Unity", "Godot", "C#"],
     link: "https://zyzamo.itch.io/",
-    thumbnailImage: itch_game_img,
+    thumbnailImage: itchGameImg,
   },
 ];
 
@@ -150,13 +150,13 @@ function matchItem(item: Project, query: string): boolean {
 }
 
 export function useProjects() {
-  const projects = ref(project_data);
+  const projects = ref(projectData);
 
   const filter = (query?: string) => {
     if (!query || query === "") {
-      projects.value = project_data;
+      projects.value = projectData;
     } else {
-      projects.value = project_data.filter((item) => matchItem(item, query));
+      projects.value = projectData.filter((item) => matchItem(item, query));
     }
   };
 

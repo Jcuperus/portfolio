@@ -20,7 +20,6 @@ useCanvasSimulation(canvasRef);
 .hero {
   position: relative;
   height: auto;
-  /* background-color: var(--primary-color); */
   color: var(--primary-bg);
   height: auto;
   width: 100%;

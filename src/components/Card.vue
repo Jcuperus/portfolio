@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import ImageCenter from "./ImageCenter.vue";
 
-const { title, thumbnail_src } = defineProps<{
+const { title, thumbnailSrc } = defineProps<{
   title: string;
-  thumbnail_src?: string;
+  thumbnailSrc?: string;
 }>();
 </script>
 
 <template>
   <div class="card">
-    <ImageCenter data-test="image" class="head" :src="thumbnail_src" />
+    <ImageCenter data-test="image" class="head" :src="thumbnailSrc" />
     <div class="body">
       <h1 data-test="title">{{ title }}</h1>
       <slot></slot>

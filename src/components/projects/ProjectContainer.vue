@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import type { Project } from "@/models/project";
-import ImageCenter from "@/components/ImageCenter.vue";
-import { City, Link, Git, Code } from "@iconoir/vue";
+import { City, Code, Git, Link } from "@iconoir/vue";
 import Card from "../Card.vue";
 
 const props = defineProps<{ project: Project }>();
 </script>
 
 <template>
-  <Card :title="project.title" :thumbnail_src="project.thumbnailImage">
+  <Card :title="project.title" :thumbnailSrc="project.thumbnailImage">
     <div class="info">
       <div v-if="project.company" class="info-item" data-test="company">
         <City />{{ project.company }}

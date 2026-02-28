@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import Card from "../Card.vue";
-import ProjectContainer from "./ProjectContainer.vue";
 import type { Project } from "@/models/project";
+import ProjectContainer from "./ProjectContainer.vue";
 
 const props = defineProps<{
   projects: Project[];

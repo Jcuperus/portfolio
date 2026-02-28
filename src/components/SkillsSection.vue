@@ -35,7 +35,6 @@ import ArticleTitle from "./ArticleTitle.vue";
 </template>
 
 <style lang="css" scoped>
-/* TODO: make responsive */
 .skills {
   max-width: 50em;
 }
