@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import ExperienceList from "@/components/experience/ExperienceList.vue";
+import ProjectList from "@/components/projects/ProjectList.vue";
 
 import ArticleTitle from "@/components/ArticleTitle.vue";
-import FilterBox from "@/components/experience/FilterBox.vue";
-import { useExperienceItems } from "@/composables/useExperienceItems.ts";
+import FilterBox from "@/components/projects/FilterBox.vue";
+import { useProjects } from "@/composables/useProjects";
 
-const { experienceItems, filter } = useExperienceItems();
+const { projects, filter } = useProjects();
 </script>
 
 <template>
   <section>
     <ArticleTitle title="projecten" id="projects" />
     <FilterBox @change="filter" />
-    <ExperienceList :experienceItems="experienceItems" />
+    <ProjectList :projects="projects" />
   </section>
 </template>

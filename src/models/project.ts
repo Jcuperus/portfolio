@@ -15,7 +15,7 @@ export type Technology =
   | "Unity"
   | "Godot";
 
-export interface ExperienceItem {
+export interface Project {
   title: string;
   body: string;
   company?: string;

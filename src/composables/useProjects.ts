@@ -7,40 +7,14 @@ import dwc_img from "@/assets/images/dwcprint-page.png";
 import fudura_img from "@/assets/images/fudura-page.png";
 import home_task_img from "@/assets/images/home-task-manager-screens.png";
 import horecagoedkoop_img from "@/assets/images/horecagoedkoop-page.png";
-import peterprint_img from "@/assets/images/peterprint-page.png";
-import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
 import java_logo_img from "@/assets/images/java-logo.png";
+import peterprint_img from "@/assets/images/peterprint-page.png";
 import portfolio_img from "@/assets/images/portfolio-screenshot.png";
+import itch_game_img from "@/assets/images/stay-b-positive-screenshot.png";
+import type { Project } from "@/models/project";
 import { ref } from "vue";
 
-export type Technology =
-  | "JavaScript"
-  | "React"
-  | "Vue"
-  | "Angular"
-  | "ArcGIS"
-  | "Java"
-  | "Android"
-  | "Spring Boot"
-  | "PHP"
-  | "Magento"
-  | "Laravel"
-  | "C#"
-  | ".NET Core"
-  | "Unity"
-  | "Godot";
-
-export interface ExperienceItem {
-  title: string;
-  body: string;
-  company?: string;
-  link?: string;
-  source?: string;
-  thumbnailImage?: string;
-  technologies: Technology[];
-}
-
-export const experience_data: ExperienceItem[] = [
+export const project_data: Project[] = [
   {
     title: "Digital Twin",
     company: "Antea Group",
@@ -162,7 +136,7 @@ export const experience_data: ExperienceItem[] = [
  * @param query query string
  * @returns boolean indicating whether a match is found
  */
-function matchItem(item: ExperienceItem, query: string): boolean {
+function matchItem(item: Project, query: string): boolean {
   const queryLower = query.toLowerCase();
 
   return (
@@ -175,18 +149,16 @@ function matchItem(item: ExperienceItem, query: string): boolean {
   );
 }
 
-export function useExperienceItems() {
-  const experienceItems = ref(experience_data);
+export function useProjects() {
+  const projects = ref(project_data);
 
   const filter = (query?: string) => {
     if (!query || query === "") {
-      experienceItems.value = experience_data;
+      projects.value = project_data;
     } else {
-      experienceItems.value = experience_data.filter((item) =>
-        matchItem(item, query),
-      );
+      projects.value = project_data.filter((item) => matchItem(item, query));
     }
   };
 
-  return { experienceItems, filter };
+  return { projects, filter };
 }

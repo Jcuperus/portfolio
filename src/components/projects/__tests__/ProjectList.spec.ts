@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import ExperienceList from "../ExperienceList.vue";
+import ProjectList from "../ProjectList.vue";
 import { mount } from "@vue/test-utils";
-import type { ExperienceItem } from "@/models/experience_item";
+import type { Project } from "@/models/project";
 
-describe("ExperienceContainer", () => {
+describe("ProjectList", () => {
   it("renders correct amount of items", () => {
-    const experienceItems: ExperienceItem[] = [
+    const projects: Project[] = [
       {
         title: "test item",
         body: "test body",
@@ -18,19 +18,19 @@ describe("ExperienceContainer", () => {
       },
     ];
 
-    const wrapper = mount(ExperienceList, {
-      props: { experienceItems: experienceItems },
+    const wrapper = mount(ProjectList, {
+      props: { projects: projects },
     });
 
-    const items = wrapper.findAll('[data-test="experience-item"]');
+    const items = wrapper.findAll('[data-test="project-item"]');
 
-    expect(items.length).toBe(experienceItems.length);
+    expect(items.length).toBe(projects.length);
   });
 
   it("renders placeholder if no items supplied", () => {
-    const wrapper = mount(ExperienceList, {
+    const wrapper = mount(ProjectList, {
       props: {
-        experienceItems: [],
+        projects: [],
       },
     });
 
