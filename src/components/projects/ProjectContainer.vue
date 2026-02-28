@@ -29,3 +29,14 @@ const props = defineProps<{ project: Project }>();
     <p data-test="body">{{ project.body }}</p>
   </Card>
 </template>
+
+<style lang="css" scoped>
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-item > *:first-child {
+  margin-right: 1em;
+}
+</style>

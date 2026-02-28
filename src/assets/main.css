@@ -109,25 +109,3 @@ button.primary-inverted {
   color: var(--primary-bg);
   background-color: var(--primary-color);
 }
-
-.label-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  justify-content: flex-start;
-}
-
-.label {
-  padding: 1em;
-  border-radius: 1em;
-  font-size: 0.8em;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-}
-
-.info-item > *:first-child {
-  margin-right: 1em;
-}
