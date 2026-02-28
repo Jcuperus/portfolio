@@ -8,6 +8,7 @@ describe("Card", () => {
     const expectedThumbnailSrc = "image.png";
     const bodyContent = "<p>body renders!</p>";
 
+    // @ts-ignore
     const wrapper = mount(Card, {
       slots: {
         default: bodyContent,
@@ -27,6 +28,7 @@ describe("Card", () => {
   });
 
   it("doesn't display image if thumbnail is missing", () => {
+    // @ts-ignore
     const wrapper = mount(Card, {
       props: {
         title: "hello",
