@@ -9,7 +9,12 @@ const { title, thumbnailSrc } = defineProps<{
 
 <template>
   <div class="card">
-    <ImageCenter data-test="image" class="head" :src="thumbnailSrc" />
+    <ImageCenter
+      v-if="thumbnailSrc != null"
+      data-test="thumbnail"
+      class="head"
+      :src="thumbnailSrc"
+    />
     <div class="body">
       <h1 data-test="title">{{ title }}</h1>
       <slot></slot>

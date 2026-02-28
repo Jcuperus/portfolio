@@ -39,7 +39,7 @@ describe("ProjectContainer", () => {
       props: { project: project },
     });
 
-    const image = wrapper.get('[data-test="image"]');
+    const image = wrapper.get('[data-test="thumbnail"]');
 
     expect(image.html()).toContain(project.thumbnailImage);
   });
@@ -55,9 +55,9 @@ describe("ProjectContainer", () => {
       props: { project: project },
     });
 
-    const image = wrapper.get('[data-test="image"]');
+    const image = wrapper.findAll('[data-test="thumbnail"]');
 
-    expect(image.html()).not.toContain(project.thumbnailImage);
+    expect(image).toHaveLength(0);
   });
 
   it("renders company if present in Project", () => {
