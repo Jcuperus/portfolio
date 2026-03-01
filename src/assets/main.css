@@ -8,6 +8,15 @@
   --max-section-width: 50em;
 }
 
+@keyframes reveal-title {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -36,6 +45,7 @@ main section {
   margin-bottom: 2em;
   background-color: var(--primary-bg);
   padding: 1em;
+  box-shadow: var(--default-shadow);
 }
 
 main section.smaller {
@@ -44,15 +54,6 @@ main section.smaller {
 
 main section.right {
   margin-left: auto;
-}
-
-@keyframes reveal-title {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 h1,

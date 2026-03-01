@@ -46,6 +46,10 @@ nav {
   gap: 1em;
 }
 
+#theme-switcher .nav-btn {
+  z-index: 11;
+}
+
 .theme-switch-container {
   position: absolute;
   background-color: var(--primary-color);
@@ -54,6 +58,7 @@ nav {
   right: 0;
   padding: 1em;
   min-width: 14em;
+  z-index: 10;
 }
 
 nav a,
@@ -67,6 +72,7 @@ nav a,
   cursor: pointer;
   position: relative;
   z-index: 1;
+  box-shadow: var(--default-shadow);
 }
 
 nav a:hover,
@@ -84,5 +90,6 @@ nav a:active {
   color: var(--primary-bg);
   background-color: var(--primary-color);
   border-bottom-color: var(--primary-color);
+  box-shadow: unset;
 }
 </style>
