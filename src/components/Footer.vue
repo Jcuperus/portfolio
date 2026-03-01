@@ -27,6 +27,7 @@
 <style lang="css" scoped>
 footer {
   background-color: var(--primary-color);
+  border-top: 1px solid var(--primary-bg);
   margin-top: 4em;
 }
 
@@ -40,7 +41,7 @@ footer h1 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 1em 0;
+  padding: 1em;
 }
 
 .links {
